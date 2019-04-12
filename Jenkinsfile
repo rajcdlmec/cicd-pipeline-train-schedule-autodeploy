@@ -66,7 +66,7 @@ pipeline {
                         validResponseCodes: '200:404',
                         timeout: 30
                     )
-                    if (response.status != 200) {
+                    if (response.status < 200) {
                         error("Smoke test against canary deployment failed.")
                     }
                 }
